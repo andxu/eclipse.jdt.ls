@@ -151,7 +151,7 @@ public class BasicFileDetector {
 			}
 
 		};
-		Files.walkFileTree(dir, Collections.emptySet(), maxDepth, visitor);
+		Files.walkFileTree(dir, EnumSet.of(FileVisitOption.FOLLOW_LINKS), maxDepth, visitor);
 	}
 
 	private boolean isExcluded(Path dir) {
